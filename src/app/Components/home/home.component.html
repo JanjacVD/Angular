@@ -6,7 +6,7 @@
         {{ beer.name }}
       </p>
       <p class="abv">{{ beer.abv }}</p>
-      <a routerLink="details" class="learn-more">Learn more</a>
+      <a routerLink="details/{{ beer.id }}" class="learn-more">Learn more</a>
       <button class="favourite-button">Add to favourites</button>
     </div>
   </div>
