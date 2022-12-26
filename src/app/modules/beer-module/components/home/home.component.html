@@ -1,0 +1,26 @@
+<div *ngIf="isLoaded$ | async; else loading">
+  <input type="text" (keyup)="filterName($event)">
+  <input type="range" min={{minAbv}} max={{maxAbv}} (change)="filterAbv($event)" step="0.1">
+  <select>
+    <option value="abv">ABV</option>
+    <option value="name">Name</option>
+  </select>
+  <select>
+    <option value="asc">ABC</option>
+    <option value="desc">DESC</option>
+  </select>
+  <div class="beer" *ngFor="let beer of beers$ | async">
+    <img [src]="beer.image_url" alt="" />
+    <div class="beer-description">
+      <p class="name">
+        {{ beer.name }}
+      </p>
+      <p class="abv">{{ beer.abv }}</p>
+      <a routerLink="details/{{ beer.id }}" class="learn-more">Learn more</a>
+      <button class="favourite-button">Add to favourites</button>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  Loading screen
+</ng-template>

@@ -1,15 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GetDataService } from 'src/assets/services/get-data.service';
-
-
-type Beer = {
-  id: string,
-  name:string,
-  description:string,
-  image_url: string,
-  abv: string,
-}
+import { Beer } from 'src/app/modules/beer-module/data/interfaces';
+import { GetDataService } from '../../services/get-data.service';
 
 @Component({
   selector: 'app-details',
